@@ -19,8 +19,8 @@ st.title("🎬  Movie Recommendation System")
 # -----------------------------
 @st.cache_data
 def load_data():
-    movies = pd.read_csv(r"C:\Users\User\Desktop\movie\ml-32m\movies.csv")      # movieId, title, genres, poster_url (new column)
-    ratings = pd.read_csv(r"C:\Users\User\Desktop\movie\ml-32m\ratings.csv")    # userId, movieId, rating
+    movies = pd.read_csv(r"C:\Users\User\Desktop\movie\src\movies.csv")      # movieId, title, genres, poster_url (new column)
+    ratings = pd.read_csv(r"C:\Users\User\Desktop\movie\src\ratings.csv")    # userId, movieId, rating
     return movies, ratings
 movies_df, ratings_df = load_data()
 
