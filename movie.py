@@ -1,5 +1,5 @@
 
-
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -14,13 +14,21 @@ from io import BytesIO
 st.set_page_config(page_title=" Movie Recommender", layout="wide")
 st.title("🎬  Movie Recommendation System")
 
+# Current file directory
+current_dir = os.path.dirname(__file__)  # src/ folder
+
+# CSV file paths
+movies_path = os.path.join(current_dir, 'movies.csv')
+ratings_path = os.path.join(current_dir, 'ratings.csv')
 # -----------------------------
 # 1️ Load Data
 # -----------------------------
 @st.cache_data
 def load_data():
-    movies = pd.read_csv(r"C:\Users\User\Desktop\movie\ml-32m\movies.csv"")      # movieId, title, genres, poster_url (new column)
-    ratings = pd.read_csv(r"C:\Users\User\Desktop\movie\ml-32m\ratings.csv"")    # userId, movieId, rating
+   
+movies_df = pd.read_csv(movies_path) # movieId, title, genres, poster_url (new column)
+ratings_df = pd.read_csv(ratings_path)    # userId, movieId, rating  
+      
     return movies, ratings
 movies_df, ratings_df = load_data()
 
