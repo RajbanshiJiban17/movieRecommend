@@ -40,3 +40,5 @@ It suggests personalized movies to users based on their past ratings.
 ```bash
 pip install -r requirements.txt
 streamlit run movie.py
+
+https://movie-recomended.streamlit.app/
