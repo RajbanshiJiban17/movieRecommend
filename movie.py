@@ -19,11 +19,10 @@ st.title("🎬 Movie Recommendation System")
 def load_data():
     # ३ करोड डाटा एकैपटक लोड नगर्न nrows=2000000 (२० लाख) राख्नुहोस्
     # यदि RAM धेरै छ भने nrows हटाउन सक्नुहुन्छ
-    movies = pd.read_csv(r"C:\Users\User\Desktop\movie\ml-32m\movies.csv")
+    movies = pd.read_csv("movies.csv")
     
     # Memory जोगाउन dtype तोक्ने
-    ratings = pd.read_csv(
-        r"C:\Users\User\Desktop\movie\ml-32m\ratings.csv",
+    ratings = pd.read_csv("ratings.csv",
         dtype={'userId': 'int32', 'movieId': 'int32', 'rating': 'float32'},
         usecols=['userId', 'movieId', 'rating'],
         nrows=2000000  # पहिलो २० लाख डाटा मात्र लोड गर्ने (Memory जोगाउन)
